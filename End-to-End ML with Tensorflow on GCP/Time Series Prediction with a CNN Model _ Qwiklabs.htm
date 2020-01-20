@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://googlecoursera.qwiklabs.com/focuses/35241 -->
+<html lang="en" class="gr__googlecoursera_qwiklabs_com mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/caff0d62ed"></script><script src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/nr-1158.min.js"></script><script type="text/javascript" async="" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/js"></script><script type="text/javascript" async="" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/analytics.js"></script><script type="text/javascript" async="" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/d58fn3dh7i2n.js"></script><script type="text/javascript" async="" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/analytics.min.js"></script><script type="text/javascript" id="www-widgetapi-script" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/www-widgetapi.js" async=""></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"caff0d62ed","applicationID":"29451451","transactionName":"IQ1XRUEOVV1dFxlRXAEXSlRATkpZVxI=","queueTime":0,"applicationTime":468,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"caff0d62ed",applicationID:"29451451"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1158.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta content="[]" name="active-experiments">
+<meta content="{&quot;userId&quot;:1344779}" name="help-api-product-data">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="XKcGWunkeQTWtFXT/Pzw7h9ekstQS07wWa9SeGC0FyZj5fITR49N+HDWotcZeFo5tihWvoYm+ufpQccZaos62Q==">
+<title>Time Series Prediction with a CNN Model | Qwiklabs</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+<meta content="In this lab, you will define a CNN (Convolutional Neural Network) model to do time series prediction" name="description">
+<meta content="Qwiklabs" name="author">
+<meta content="1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0" name="google-site-verification">
+<meta content="Time Series Prediction with a CNN Model | Qwiklabs" property="og:title">
+<meta content="website" property="og:type">
+<meta content="/favicon-144.png" property="og:image">
+<meta content="Qwiklabs" property="og:site_name">
+<meta content="In this lab, you will define a CNN (Convolutional Neural Network) model to do time series prediction" property="og:description">
+<meta content="/qwiklabs_logo_900x887.png" property="og:logo" size="900x887">
+<meta content="/qwiklabs_logo_994x187.png" property="og:logo" size="994x187">
+<meta content="#3681E4" property="msapplication-TileColor">
+<meta content="/favicon-144.png" property="msapplication-TileImage">
+<link href="https://googlecoursera.qwiklabs.com/favicon-32.png" rel="shortcut icon">
+<link color="#3681E4" href="https://googlecoursera.qwiklabs.com/favicon-svg.svg" rel="mask-icon">
+<link href="https://googlecoursera.qwiklabs.com/favicon-180.png" rel="apple-touch-icon-precomposed">
+<link rel="stylesheet" media="screen" href="./Time Series Prediction with a CNN Model _ Qwiklabs_files/css">
+
+
+<!--[if lt IE 9]>
+<script src='http://html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+<![endif]-->
+<!--[endif]>  <![endif]-->
+<script>
+//<![CDATA[
+window.gon={};gon.current_user={"firstname":"Daniel","lastname":"Chan","fullname":"Daniel Chan","company":"Login with Google","email":"chandc999@gmail.com","origin":"amazon-run, direct","subscriptions":0,"id":"d989509dbf51eb7158586571712a33e2","qlCreatedAt":"2019-01-02 01:19:30 UTC","optIn":null};gon.segment="j4Im8pqIko0Lxq4wVVZWMPMM0EroHUvb";gon.deployment="googlecoursera-run";
+//]]>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.qwiklabs.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.qwiklabs.com/catalog?keywords={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script id="ze-snippet" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/snippet.js"></script><script type="text/javascript" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/asset_composer.5d2cd6d9613b85125812.js" charset="utf-8" async=""></script>
+
+
+
+<link rel="stylesheet" media="all" href="./Time Series Prediction with a CNN Model _ Qwiklabs_files/application-a53cf05bc9e39a99a1d6fa14f486d7ecec091bb67f0aca5b1257120cbf85ec76.css">
+<script>
+  EVENT_SOURCE_BASE_URL = "https://googlecoursera-run.qwiklabs.com/nchan-sub?id=";
+</script>
+<script src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/webcomponents-loader.js"></script>
+<script src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/hallofmirrors-f1314c4c2f596555fe9c75c5892153bd732b8a73eac1212e44fa71e214a02a5a.js"></script><script async="" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/lazy.min.js"></script>
+<script src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/iframe_api"></script>
+<script src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/vendor-45d462772c30000424907184f70c7157e95fb6227698d1671c5051818a6f60d8.js"></script>
+<script src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/application-ebb27cbff944188da04b9e68f7789655da6ebaa697498ca84f00351368bd2507.js"></script>
+</head>
+<body class="focuses focuses-show lab-show l-full no-nav" data-gr-c-s-loaded="true">
+<div class="header-container">
+<div class="header">
+<a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect header__button header__button--nav header__nav-panel-button js-nav-toggle" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">menu</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header__title">
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button header__button--nav" href="https://www.coursera.org/" data-upgraded=",MaterialButton,MaterialRipple"><ql-icon>arrow_back</ql-icon><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+
+<h1 class="headline-5">
+Time Series Prediction with a CNN Model
+</h1>
+</div>
+<div class="header__actions">
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button header__button--action header__button--search js-header-search-bar-button" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">search</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+
+<ql-help context="lab" productdata="{&quot;userId&quot;:1344779}" data-analytics-action="opened_help" data-analytics-label="lab"></ql-help>
+<a class="header-my-account-button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect js-my-account-button" data-upgraded=",MaterialButton,MaterialRipple">
+<img class="avatar " src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/8f4433a25a5cde294484102cb6d5a3db.png">
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header-my-account-menu js-my-account-menu">
+<div class="card elevation-2 no-padding">
+<div class="my-account-menu__top">
+<img class="avatar " src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/8f4433a25a5cde294484102cb6d5a3db.png">
+<div class="my-account-menu__info">
+<h4 class="subtitle-headline-1">
+Daniel Chan
+</h4>
+<p class="body-2 text--gray">
+<span>chandc999@gmail.com</span>
+</p>
+<a class="button" href="https://googlecoursera.qwiklabs.com/my_account/profile">My Account</a>
+</div>
+</div>
+<div class="my-account-menu__bottom">
+<a class="text--green subtitle-headline-2" href="https://googlecoursera.qwiklabs.com/my_account/credits">0 Credits
+</a><a data-analytics-action="clicked_sign_out" class="button button--hairline" rel="nofollow" data-method="delete" href="https://googlecoursera.qwiklabs.com/users/sign_out">Sign Out</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class="header__search-bar js-header-search-bar">
+<form id="catalog-search-mobile" onsubmit="ql.catalogSearchFilter(); return false;" action="https://googlecoursera.qwiklabs.com/searches/elasticsearch" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="XKcGWunkeQTWtFXT/Pzw7h9ekstQS07wWa9SeGC0FyZj5fITR49N+HDWotcZeFo5tihWvoYm+ufpQccZaos62Q==">
+<input type="text" name="keywords" id="keywords" placeholder="Search" maxlength="255">
+</form>
+
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">close</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+</div>
+
+<nav class="nav-bar">
+<a class="nav-bar__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/"><ql-icon class="nav-bar__item__icon">
+home
+</ql-icon>
+<span class="nav-bar__item__label">
+Home
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/catalog"><ql-icon class="nav-bar__item__icon">
+school
+</ql-icon>
+<span class="nav-bar__item__label">
+Catalog
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_learning"><ql-icon class="nav-bar__item__icon">
+event_note
+</ql-icon>
+<span class="nav-bar__item__label">
+My Learning
+</span>
+</a>
+</nav>
+
+<nav class="nav-panel js-nav-panel">
+<div class="nav-panel__logo">
+<div class="logo logo--blue"></div>
+</div>
+<a title="Home" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/"><ql-icon class="nav-panel__item__icon">
+home
+</ql-icon>
+<div class="nav-panel__item__label">
+Home
+</div>
+</a>
+<a title="Catalog" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/catalog"><ql-icon class="nav-panel__item__icon">
+school
+</ql-icon>
+<div class="nav-panel__item__label">
+Catalog
+</div>
+</a>
+<a title="My Learning" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_learning"><ql-icon class="nav-panel__item__icon">
+event_note
+</ql-icon>
+<div class="nav-panel__item__label">
+My Learning
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a title="Profile" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_account/profile"><ql-icon class="nav-panel__item__icon">
+account_circle
+</ql-icon>
+<div class="nav-panel__item__label">
+Profile
+</div>
+</a>
+<a title="Credits &amp; Subscriptions" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_account/credits"><ql-icon class="nav-panel__item__icon">
+money
+</ql-icon>
+<div class="nav-panel__item__label">
+Credits &amp; Subscriptions
+</div>
+</a>
+<a title="Security" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://googlecoursera.qwiklabs.com/my_account/security"><ql-icon class="nav-panel__item__icon">
+security
+</ql-icon>
+<div class="nav-panel__item__label">
+Security
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a class="nav-panel__item" tabindex="-1" href="https://googlecoursera.qwiklabs.com/focuses/35241#"><ql-help>
+<div class="nav-panel__help-item">
+<ql-icon class="nav-panel__item__icon">help</ql-icon>
+<div class="nav-panel__item__label">Help</div>
+</div>
+</ql-help>
+</a><div class="nav-panel__small-links">
+<a tabindex="-1" href="https://googlecoursera.qwiklabs.com/privacy_policy">Privacy</a>
+<a tabindex="-1" href="https://googlecoursera.qwiklabs.com/terms_of_service">Terms</a>
+</div>
+</nav>
+<div class="nav-panel__overlay js-nav-toggle"></div>
+
+<main class="js-main">
+<span class="hidden" id="flash-sibling-before"></span>
+
+<div class="l-main-wrapper" id="main-wrapper">
+
+
+
+
+
+
+
+<div class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;Time Series Prediction with a CNN Model&quot;,&quot;lab_name&quot;:&quot;Time Series Prediction with a CNN Model&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;googlecoursera-run&quot;}" data-focus-id="35241" data-lab-billing-limit="0.0" data-lab-duration="7200" data-parent="classroom"></div>
+<ql-lab-control-panel class="js-lab-control-panel l-lab-control-panel" connectiondetails="[]" connectionfiles="[]" labcontrolbutton="{&quot;disabled&quot;:false,&quot;pending&quot;:false,&quot;running&quot;:false}" labtimer="{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:7200}" studentresources="[]"></ql-lab-control-panel>
+<div class="l-lab-main-body">
+<div class="js-lab-content lab-content">
+<div class="alert alert--fake js-alert">
+<p class="alert__message js-alert-message"></p>
+<a class="alert__close js-alert-close">
+<i class="fa fa-times"></i>
+</a>
+<iframe class="l-ie-iframe-fix" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/saved_resource.html"></iframe>
+</div>
+<div class="lab-content__markdown-wrapper">
+<div class="lab-preamble">
+<h1 class="lab-preamble__title">
+Time Series Prediction with a CNN Model
+</h1>
+<div class="lab-preamble__details subtitle-headline-1">
+<span>2 hours </span>
+<span>Free</span>
+<div class="lab__rating">
+<a href="https://googlecoursera.qwiklabs.com/focuses/35241/reviews?parent=catalog"><div class="rateit" data-rateit-readonly="true" data-rateit-value="4.1423"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 66.2768px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+
+</a><a data-target="#lab-review-modal" data-toggle="modal">
+Rate Lab
+</a>
+</div>
+</div>
+</div>
+
+<div class="lab-content__inner-wrapper">
+<div class="js-markdown-instructions lab-content__markdown markdown-lab-instructions" id="markdown-lab-instructions">
+
+
+
+<h2 id="step1">Overview</h2>
+<p><em>Duration is 1 min</em></p>
+<p>In this lab, you will define a CNN (Convolutional Neural Network) model to do time series prediction.</p>
+<h3>What you learn</h3>
+<p>In this lab, you will learn how to:</p>
+<ul>
+<li>
+<p>Create a CNN model for time series prediction</p>
+</li>
+<li>
+<p>Train and serve the model on Cloud AI Platform</p>
+</li>
+</ul>
+<h2 id="step2">Setup</h2>
+<p>For each lab, you get a new GCP project and set of resources for a fixed time at no cost.</p>
+<ol>
+<li>
+<p>Make sure you signed into Qwiklabs using an <strong>incognito window</strong>.</p>
+</li>
+<li>
+<p>Note the lab's access time (for example, <img alt="img/time.png" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/aZQJ4BT7uCmM9XR6BTXgTRP1Hfu1T7q6V+cnbdEsbpU="> and make sure you can finish in that time block.</p>
+</li>
+</ol>
+<aside> <p>
+  There is no pause feature. You can restart if needed, but you have to start at the beginning.
+  </p>
+
+</aside>
+<ol start="3">
+<li>
+<p>When ready, click <img alt="img/start_lab.png" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/XE8x7uvQokyubNwnYKKc+vBBNrMlo5iNZiDDzQQ3Ddo=">.</p>
+</li>
+<li>
+<p>Note your lab credentials. You will use them to sign in to Cloud Platform Console.
+<img alt="img/open_google_console.png" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/0d78dhX6IVMVWmixCPPSBbmi5O2GPokCXf1Ps1AkTgI="></p>
+</li>
+<li>
+<p>Click <strong>Open Google Console</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Use another account</strong> and copy/paste credentials for <strong>this</strong> lab into the prompts.</p>
+</li>
+</ol>
+<aside class="warning"><p>
+  If you use other credentials, you'll get errors or <strong>incur charges</strong>.
+  </p>
+</aside>
+<ol start="7">
+<li>Accept the terms and skip the recovery resource page.</li>
+</ol>
+<aside class="warning"><p>
+  Do not click <strong>End Lab</strong> unless you are finished with the lab or want to restart it. This clears your work and removes the project.
+  </p>
+</aside>
+
+<h3>Activate Google Cloud Shell</h3>
+<p>Google Cloud Shell is a virtual machine that is loaded with development tools. It offers a persistent 5GB home directory and runs on the Google Cloud.
+Google Cloud Shell provides command-line access to your GCP resources.</p>
+<ol>
+<li>
+<p>In GCP console, on the top right toolbar, click the Open Cloud Shell button.</p>
+<p><img alt="Cloud Shell icon" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/vdY5e_an9ZGXw5a_ZMb1agpXhRGozsOadHURcR8thAQ="></p>
+</li>
+<li>
+<p>Click <strong>Continue</strong>.
+<img alt="cloudshell_continue.png" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/lr3PBRjWIrJ+MQnE8kCkOnRQQVgJnWSg4UWk16f0s_A="></p>
+</li>
+</ol>
+<p>It takes a few moments to provision and connect to the environment. When you are connected, you are already authenticated, and the project is set to your <em>PROJECT_ID</em>. For example:</p>
+<p><img alt="Cloud Shell Terminal" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/hmMK0W41Txk+20bQyuDP9g60vCdBajIS+52iI2f4bYk="></p>
+<p><strong>gcloud</strong> is the command-line tool for Google Cloud Platform. It comes pre-installed on Cloud Shell and supports tab-completion.</p>
+<p>You can list the active account name with this command:</p>
+<pre><code>gcloud auth list
+</code><button class="button button--copy js-copy-button-0"><i class="fa fa-clipboard"></i></button></pre>
+<p>Output:</p>
+<pre><code class="language-output prettyprint prettyprinted" style=""><span class="typ">Credentialed</span><span class="pln"> accounts</span><span class="pun">:</span><span class="pln">
+ </span><span class="pun">-</span><span class="pln"> </span><span class="str">&lt;myaccount&gt;</span><span class="pun">@&lt;</span><span class="pln">mydomain</span><span class="pun">&gt;.</span><span class="pln">com </span><span class="pun">(</span><span class="pln">active</span><span class="pun">)</span></code><button class="button button--copy js-copy-button-1"><i class="fa fa-clipboard"></i></button></pre>
+<p>Example output:</p>
+<pre><code class="language-Output prettyprint prettyprinted" style=""><span class="typ">Credentialed</span><span class="pln"> accounts</span><span class="pun">:</span><span class="pln">
+ </span><span class="pun">-</span><span class="pln"> google1623327_student@qwiklabs</span><span class="pun">.</span><span class="pln">net</span></code><button class="button button--copy js-copy-button-2"><i class="fa fa-clipboard"></i></button></pre>
+<p>You can list the project ID with this command:</p>
+<pre><code>gcloud config list project
+</code><button class="button button--copy js-copy-button-3"><i class="fa fa-clipboard"></i></button></pre>
+<p>Output:</p>
+<pre><code class="language-output prettyprint prettyprinted" style=""><span class="pun">[</span><span class="pln">core</span><span class="pun">]</span><span class="pln">
+project </span><span class="pun">=</span><span class="pln"> </span><span class="str">&lt;project_ID&gt;</span></code><button class="button button--copy js-copy-button-4"><i class="fa fa-clipboard"></i></button></pre>
+<p>Example output:</p>
+<pre><code class="language-Output prettyprint prettyprinted" style=""><span class="pun">[</span><span class="pln">core</span><span class="pun">]</span><span class="pln">
+project </span><span class="pun">=</span><span class="pln"> qwiklabs</span><span class="pun">-</span><span class="pln">gcp</span><span class="pun">-</span><span class="lit">44776a13dea667a6</span></code><button class="button button--copy js-copy-button-5"><i class="fa fa-clipboard"></i></button></pre>
+<ql-infobox>
+  Full documentation of <strong>gcloud</strong> is available on <a href="https://cloud.google.com/sdk/gcloud">Google Cloud gcloud Overview</a>.
+</ql-infobox>
+
+<h2 id="step3">Create storage bucket</h2>
+<p><em>Duration is 2 min</em></p>
+<p>Create a bucket using the GCP console:</p>
+<p><strong>Step 1</strong></p>
+<p>In your GCP Console, click on the <strong>Navigation menu</strong> (<img alt="menu.png" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/LyLHJ5I3gtYdRN1pHDZ2JK2vbd1sM6W2viT0OzyRPTs=">), and select <strong>Storage</strong>.</p>
+<p><strong>Step 2</strong></p>
+<p>Click on <strong>Create bucket</strong>.</p>
+<p><strong>Step 3</strong></p>
+<p>Choose a Regional bucket and set a unique name (use your project ID because it is unique).  Then, click <strong>Create</strong>.</p>
+
+<h2 id="step4">Launch AI Platform Notebooks</h2>
+<p>To launch a Cloud AI Platform Notebook with TensorBoard support:</p>
+<p><strong>Step 1</strong></p>
+<p>Navigate to the Cloud Shell</p>
+<p><strong>Step 2</strong></p>
+<p>Paste and execute the following commands.   These commands will create a Cloud AI Platform Notebook instance with TensorBoard support.</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">export IMAGE_FAMILY</span><span class="pun">=</span><span class="str">"tf-1-14-cpu"</span><span class="pln">
+export ZONE</span><span class="pun">=</span><span class="str">"us-west1-b"</span><span class="pln">
+export INSTANCE_NAME</span><span class="pun">=</span><span class="str">"tf-tensorboard-1"</span><span class="pln">
+export INSTANCE_TYPE</span><span class="pun">=</span><span class="str">"n1-standard-4"</span><span class="pln">
+gcloud compute instances create </span><span class="str">"${INSTANCE_NAME}"</span><span class="pln"> \
+        </span><span class="pun">--</span><span class="pln">zone</span><span class="pun">=</span><span class="str">"${ZONE}"</span><span class="pln"> \
+        </span><span class="pun">--</span><span class="pln">image</span><span class="pun">-</span><span class="pln">family</span><span class="pun">=</span><span class="str">"${IMAGE_FAMILY}"</span><span class="pln"> \
+        </span><span class="pun">--</span><span class="pln">image</span><span class="pun">-</span><span class="pln">project</span><span class="pun">=</span><span class="pln">deeplearning</span><span class="pun">-</span><span class="pln">platform</span><span class="pun">-</span><span class="pln">release \
+        </span><span class="pun">--</span><span class="pln">machine</span><span class="pun">-</span><span class="pln">type</span><span class="pun">=</span><span class="str">"${INSTANCE_TYPE}"</span><span class="pln"> \
+        </span><span class="pun">--</span><span class="pln">boot</span><span class="pun">-</span><span class="pln">disk</span><span class="pun">-</span><span class="pln">size</span><span class="pun">=</span><span class="lit">200GB</span><span class="pln"> \
+        </span><span class="pun">--</span><span class="pln">scopes</span><span class="pun">=</span><span class="pln">https</span><span class="pun">://</span><span class="pln">www</span><span class="pun">.</span><span class="pln">googleapis</span><span class="pun">.</span><span class="pln">com</span><span class="pun">/</span><span class="pln">auth</span><span class="pun">/</span><span class="pln">cloud</span><span class="pun">-</span><span class="pln">platform \
+        </span><span class="pun">--</span><span class="pln">metadata</span><span class="pun">=</span><span class="str">"proxy-mode=project_editors"</span><span class="pln">
+</span></code><button class="button button--copy js-copy-button-6"><i class="fa fa-clipboard"></i></button></pre>
+<p>After a few minutes the command prompt will be returned the Cloud Shell and state that notebook was created.</p>
+<p>You can ignore any warning message such as: <strong>WARNING: Some requests generated warnings: Disk size: '200 GB' is larger than image size: '30 GB'. You might need to resize the root...</strong>.</p>
+<p><strong>Step 3</strong></p>
+<p>Click on the <strong>Navigation Menu</strong>. Navigate to <strong>Artificial Intelligence</strong>, then to <strong>AI Platform</strong>, then to <strong>Notebooks</strong>.</p>
+<p><img alt="Open new notebook" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/IB3Esl1c5JyIgNJT6ndzE8xigjj2j2tnc92LYQ6jccI="></p>
+<p><strong>Step 4</strong></p>
+<p>Even though your gcloud command completed successfully in the Cloud Shell it may take up to 5 minutes for the new Notebook to appear.  Please press the refresh button periodically until the notebook appears.</p>
+<p><img alt="Refresh" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/a+WoPqKB7+Ok89uIEE7ZdfrVmDREfAOOcR2KbkomarU="></p>
+<p>Click <strong>OPEN JUPYTERLAB</strong>. A JupyterLab window will open in a new tab.</p>
+<p><img alt="Notebook is Available" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/1PK1ecta9NPV+K5nelaYeyb2kAdkOBgYzTMMOX_IDvM="></p>
+<p><img alt="JupyterLab" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/B+F4j0KFkk0cgQ8A2yFqYUV6J9slSwEHAeR9vkUo+Bs="></p>
+
+<h2 id="step5">Clone course repo within your AI Platform Notebooks instance</h2>
+<p>To clone the <code>training-data-analyst</code> notebook in your JupyterLab instance:</p>
+<p><strong>Step 1</strong></p>
+<p>In JupyterLab, click the Terminal icon to open a new terminal.</p>
+<p><img alt="Open Terminal" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/JE+lWdvoG3bIONccjrfxprJngYD2NsSfc0JKnOQ8eL8="></p>
+<p><strong>Step 2</strong></p>
+<p>At the command-line prompt, type in the following command and press Enter.</p>
+<pre><code class="language-bash prettyprint prettyprinted" style=""><span class="pln">git clone https</span><span class="pun">://</span><span class="pln">github</span><span class="pun">.</span><span class="pln">com</span><span class="pun">/</span><span class="typ">GoogleCloudPlatform</span><span class="pun">/</span><span class="pln">training</span><span class="pun">-</span><span class="pln">data</span><span class="pun">-</span><span class="pln">analyst </span></code><button class="button button--copy js-copy-button-7"><i class="fa fa-clipboard"></i></button></pre>
+<p><strong>Step 3</strong></p>
+<p>Confirm that you have cloned the repository by double clicking on the <code>training-data-analyst</code> directory and ensuring that you can see its contents. The files for all the Jupyter notebook-based labs throughout this course are available in this directory.</p>
+<p><img alt="Training data analyst repository" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/qzsmg9brDlDnoCGfuL1VFCaAmAE9vg3c91UZbaMuKDI="></p>
+
+<h2 id="step6">Time Series Prediction with a Sequence Model</h2>
+<p><em>Duration is 15 min</em></p>
+<p>The model code is packaged as a separate python module. You will first complete the model code and then switch to the notebook to set some parameters and run the training job.</p>
+<p><strong>Step 1</strong></p>
+<p>In the notebook interface, navigate to <strong>training-data-analyst &gt; courses &gt; machine_learning &gt; deepdive &gt; 09_sequence &gt; labs &gt; sinemodel</strong> and open <strong>model.py</strong>.</p>
+<p><strong>Step 2</strong></p>
+<p>Scroll down to the function called <em>cnn_model</em>. Your task is to replace the <em>TODO</em> in the code, so that this function returns predictions for a CNN.</p>
+<p>If you need more help, you may take a look at the complete solution by navigating to : <strong>training-data-analyst &gt; courses &gt; machine_learning &gt; deepdive &gt; 09_sequence &gt; sinemodel</strong> and open <strong>model.py</strong></p>
+<p><strong>Step 3</strong></p>
+<p>Now that you have defined your CNN model, you are ready to run the training job.</p>
+<p>In the notebook interface, navigate to <strong>training-data-analyst &gt; courses &gt; machine_learning &gt; deepdive &gt; 09_sequence &gt; labs</strong> and open <strong>sinewaves.ipynb</strong>.</p>
+<p><strong>Step 4</strong></p>
+<p>In the notebook interface, click on <strong>Edit &gt; Clear All Outputs</strong> (click on Edit, then in the drop-down menu, select Clear All Outputs).</p>
+<p><strong>Step 5</strong></p>
+<p>In the first cell, make sure to replace the project id, bucket and region with your qwiklabs project id, your bucket, and bucket region respectively.</p>
+<p>Also, change the --model = <em>cnn</em>  (linear is the default, be sure to change it)</p>
+<p><strong>Step 6</strong></p>
+<p>Now read the narrative in the following cells and execute each cell in turn.</p>
+<h2 id="step7">End your lab</h2>
+<p>When you have completed your lab, click <strong>End Lab</strong>. Qwiklabs removes the resources you’ve used and cleans the account for you.</p>
+<p>You will be given an opportunity to rate the lab experience. Select the applicable number of stars, type a comment, and then click <strong>Submit</strong>.</p>
+<p>The number of stars indicates the following:</p>
+<ul>
+<li>1 star = Very dissatisfied</li>
+<li>2 stars = Dissatisfied</li>
+<li>3 stars = Neutral</li>
+<li>4 stars = Satisfied</li>
+<li>5 stars = Very satisfied</li>
+</ul>
+<p>You can close the dialog box if you don't want to provide feedback.</p>
+<p>For feedback, suggestions, or corrections, please use the <strong>Support</strong> tab.</p>
+
+<h5>Manual Last Updated: July 11, 2019</h5>
+<h5>Lab Last Tested: June 12, 2019</h5>
+<p>©2019 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.</p>
+
+
+
+</div>
+<div class="js-lab-content-outline lab-content__outline is-stuck">
+<a href="https://googlecoursera.qwiklabs.com/focuses/35241#step1" class="">Overview</a><a href="https://googlecoursera.qwiklabs.com/focuses/35241#step2" class="is-active">Setup</a><a href="https://googlecoursera.qwiklabs.com/focuses/35241#step3" class="">Create storage bucket</a><a href="https://googlecoursera.qwiklabs.com/focuses/35241#step4" class="">Launch AI Platform Notebooks</a><a href="https://googlecoursera.qwiklabs.com/focuses/35241#step5" class="">Clone course repo within your AI Platform Notebooks instance</a><a href="https://googlecoursera.qwiklabs.com/focuses/35241#step6" class="">Time Series Prediction with a Sequence Model</a><a href="https://googlecoursera.qwiklabs.com/focuses/35241#step7">End your lab</a>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+<div class="lab-introduction js-lab-introduction is-hidden">
+<div class="lab-introduction__inner">
+<h1 class="headline-1">Welcome to Your First Lab!</h1>
+<ql-icon-button class="js-skip-button">close</ql-icon-button>
+<div class="lab-introduction__video">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/yF7EDXKTmoQ.html"></iframe>
+</div>
+<a class="js-skip-button button button--outline">Skip this video</a>
+</div>
+</div>
+
+
+
+</div>
+</main>
+<div class="modal fade" id="lab-details-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<div class="modal-body">
+<p class="l-mbm">
+In this lab, you will define a CNN (Convolutional Neural Network) model to do time series prediction
+</p>
+<p class="small-label l-mbs">
+<strong>
+Duration:
+</strong>
+0m setup
+·
+120m access
+·
+120m completion
+</p>
+<p class="small-label l-mbs">
+<span><strong>Levels: </strong>introductory</span>
+</p>
+<p class="small-label">
+<strong>
+Permalink:
+</strong>
+<a href="https://googlecoursera.qwiklabs.com/catalog_lab/1974">https://googlecoursera.qwiklabs.com/catalog_lab/1974</a>
+</p>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Got It
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/saved_resource(1).html"></iframe>
+</div>
+<div class="modal fade" id="lab-review-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<form class="simple_form js-lab-review-form" id="new_lab_review" action="https://googlecoursera.qwiklabs.com/lab_reviews" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><div class="modal-body">
+<p class="label">
+How satisfied are you with this lab?*
+</p>
+<div class="rateit js-rateit" data-rateit-max="5" data-rateit-min="0" data-rateit-resetable="false" data-rateit-step="1" data-rateit-value="0"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 0px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+<div class="l-mtm">
+
+<div class="control-group hidden lab_review_user_id"><div class="controls"><input class="hidden" type="hidden" value="1344779" name="lab_review[user_id]" id="lab_review_user_id"></div></div>
+<div class="control-group hidden lab_review_classroom_id"><div class="controls"><input class="hidden" type="hidden" value="4499" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div></div>
+<div class="control-group hidden lab_review_lab_id"><div class="controls"><input class="hidden" type="hidden" value="1974" name="lab_review[lab_id]" id="lab_review_lab_id"></div></div>
+<div class="control-group hidden lab_review_focus_id"><div class="controls"><input class="hidden" type="hidden" value="35241" name="lab_review[focus_id]" id="lab_review_focus_id"></div></div>
+<div class="control-group hidden lab_review_rating"><div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div></div>
+<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">Comment</label><div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div></div>
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Cancel
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<input type="submit" name="commit" value="Submit" disabled="disabled" class="btn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="submit" data-disabled="false" data-disable-with="Submit" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></input>
+</div>
+</form>
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/saved_resource(2).html"></iframe>
+</div>
+
+<script>
+  $( function() {
+    ql.initMaterialInputs();
+    initChosen();
+    initSearch();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.modals.init();
+    ql.toggleButtons.init();
+    ql.analytics.init();
+    initLabContent( );
+  ql.labOutline.links.init();
+  ql.labOutline.layout.init();
+  initLabReviewModal();
+  ql.labAssessment.init();
+  ql.labIntroduction.init( true );
+  ql.labData.init();
+  initLabTranslations( {"are_you_sure":"All done? If you end this lab, you will lose all your work. You may not be able to restart the lab if there is a quota limit. Are you sure you want to end this lab?\n","in_progress":"*In Progress*","ending":"*Ending*","starting":"*Starting, please wait*","end_concurrent_labs":"Sorry, you can only run one lab at a time. To start this lab, please confirm that you want all of your existing labs to end.\n","copied":"Copied","no_resource":"Error retrieving resource.","no_support":"No Support","mac_press":"Press ⌘-C to copy","thanks_review":"Thanks for reviewing this lab.","windows_press":"Press Ctrl-C to copy","days":"days"} );
+  ql.labRun.init();
+  ql.initHeader();
+  ql.navigation.init();
+  ql.navPanel.init();
+  ql.navigation.init();
+  
+  });
+</script>
+<style>
+  .mdl-layout__container {
+    position: static
+  }
+</style>
+
+
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/saved_resource(3).html" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div id="drift-widget-container" style="position: absolute; z-index: 2147483647;"><iframe id="drift-widget" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/index.html" title="Drift Messenger" role="complementary" style="border: none; display: block; height: 0px !important; width: 0px !important; position: fixed; top: auto; left: auto; bottom: 0px; right: 0px; visibility: hidden; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1; pointer-events: auto; touch-action: auto;" class="drift-widget-hidden"></iframe></div><div><iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 113px;width: 113px;width: 113px;" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/saved_resource(4).html"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;" src="./Time Series Prediction with a CNN Model _ Qwiklabs_files/saved_resource(5).html"></iframe></div></body></html>
